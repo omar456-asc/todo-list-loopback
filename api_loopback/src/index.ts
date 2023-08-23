@@ -5,6 +5,7 @@ export * from './application';
 export async function main(options: ApplicationConfig = {}) {
   const app = new ApiLoopbackApplication(options);
   await app.boot();
+  // await app.migrateSchema();
   await app.start();
 
   const url = app.restServer.url;
@@ -19,7 +20,7 @@ if (require.main === module) {
   const config = {
     rest: {
       port: +(process.env.PORT ?? 3000),
-      host: process.env.HOST?? '127.0.0.1',
+      host: process.env.HOST ?? '127.0.0.1',
       // The `gracePeriodForClose` provides a graceful close for http/https
       // servers with keep-alive clients. The default value is `Infinity`
       // (don't force-close). If you want to immediately destroy all sockets
