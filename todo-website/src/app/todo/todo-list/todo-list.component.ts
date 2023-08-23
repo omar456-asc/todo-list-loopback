@@ -8,7 +8,6 @@ import { TodoServiceService } from 'src/app/_services/todo-services/todo-service
   styleUrls: ['./todo-list.component.css'],
 })
 export class TodoListComponent implements OnInit {
-  filter: 'all' | 'active' | 'done' = 'all';
   allItems: any;
   constructor(
     public todoService: TodoServiceService,
@@ -21,11 +20,6 @@ export class TodoListComponent implements OnInit {
     });
   }
   getitems() {
-    if (this.filter === 'all') {
-      return this.allItems;
-    }
-    return this.allItems.filter((item: any) =>
-      this.filter === 'done' ? item.done : !item.done
-    );
+    return this.allItems;
   }
 }

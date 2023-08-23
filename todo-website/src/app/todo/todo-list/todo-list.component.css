@@ -1,0 +1,29 @@
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  h1 {
+    text-align: center;
+    margin-top: 50px;
+  }
+  
+  .list-group-item {
+    border: none;
+    border-radius: 0;
+    padding: 20px;
+  }
+  
+  .list-group-item h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+  }
+  
+  .list-group-item p {
+    margin-bottom: 0;
+  }
+  
+  .list-group-item-success {
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+  }

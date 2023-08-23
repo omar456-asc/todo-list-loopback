@@ -1,9 +1,15 @@
-<div class="main">
-    <h1>My To Do List</h1>
-    <h2>What would you like to do today?</h2>
-  
-    <ul>
-      <li *ngFor="let item of allItems">{{item.desc}}</li>
+<div class="container">
+    <h1>Todo List</h1>
+    <ul class="list-group">
+      <li class="list-group-item" *ngFor="let todo of allItems" [ngClass]="{'list-group-item-success': todo.isComplete}">
+        <h3 >{{ todo.title }}</h3>
+        <p>{{ todo.desc }}</p>
+        <p *ngIf="todo.isComplete">Completed</p>
+        <p *ngIf="!todo.isComplete">Not Completed</p>
+      </li>
     </ul>
   </div>
-  
+  <!-- Create Button to add task -->
+    <div class="container">
+        <a routerLink="/todos/add-todo" class="btn btn-primary">Add Todo</a>
+    </div>
